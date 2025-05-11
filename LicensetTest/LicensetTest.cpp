@@ -3,7 +3,13 @@
 
 #include "framework.h"
 #include "LicensetTest.h"
+#include <wininet.h>
+
+
 #include "hasp_api.h"
+
+#include "Activate.h"
+
 
 #define MAX_LOADSTRING 100
 
@@ -20,6 +26,9 @@ INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 bool loginLicense()
 {
+    do_activation();
+
+
     const hasp_feature_t feature = HASP_DEFAULT_FID;
 
     hasp_handle_t handle = HASP_INVALID_HANDLE_VALUE;
